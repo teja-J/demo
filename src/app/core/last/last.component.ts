@@ -7,7 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation:ViewEncapsulation.None
 })
 export class LastComponent implements OnInit {
-
+  text:string | undefined;
   constructor() { }
 
   ngOnInit(): void {
