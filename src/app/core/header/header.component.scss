@@ -1,0 +1,37 @@
+app-header{
+
+  .bar {
+    height: 100px;
+    color: white;
+  }
+  .sign {
+    color: whitesmoke;
+  }
+  ul{
+
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    li{
+      margin-right:20px ;
+      font-size:16px;
+      color: black;
+      font-weight:bold;
+      font-weight: 500;
+    }
+  }
+  ul{
+    li:hover{
+      border-bottom: 2px solid blue;
+    }
+  }
+  .icon{
+    width: 60px;
+    height: 60px;
+    margin: 3px 37px;
+    text-align: center;
+  }
+}

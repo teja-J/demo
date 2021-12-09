@@ -1,0 +1,683 @@
+<!-- <app-head-nav></app-head-nav>
+<app-about></app-about>
+<app-gallery></app-gallery> -->
+
+<!--
+ <div class="container-fluid ps-0 pe-0">
+  <router-outlet>
+    <div class="icon">
+      <div class="msg">
+        <i class="bi bi-chat-left"></i>
+        <div class="pen">
+          <i class="bi bi-pen"></i>
+        </div>
+      </div>
+    </div>
+  </router-outlet>
+</div>
+ -->
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn add btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-plus-lg pe-1"></i>
+  ADD
+</button> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="staticBackdropLabel">Product</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body mx-3">
+
+        <form #f="ngForm" (ngSubmit)='save(f.value)'>
+          <div class="row">
+            <div class="col">
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">Title<span class="red">*</span></label>
+                <input #title="ngModel" ngModel name="title" type="text" class="form-control" id="title" required />
+                <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+                  Title is invalid
+                </div>
+              </div>
+              <div class="form-group mb-1">
+                <label for="code" class="form-label">Code<span class="red">*</span></label>
+                  <input #code="ngModel" ngModel name="code" type="text" class="form-control" id="code" placeholder=""required  />
+                <div class="alert alert-danger" *ngIf="code.touched && code.invalid">
+                    Code is required
+
+                </div>
+              </div>
+
+              <div class="form-group mb-1">
+                <label for="category" class="form-label">Product group<span class="red">*</span></label>
+                <select #category="ngModel" ngModel name="category" class="form-control" id="category" required>
+                  <option value=""></option>
+                  <option *ngFor="let item of items" [value]="item.name">
+                    {{ item.name }}
+                  </option>
+                </select>
+                <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
+                  Category is invalid
+                </div>
+              </div>
+              <div class="from-group mb-1">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Is Bundle
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group mb-1">
+                <label for="Unit" class="form-label">Default Unit<span class="red">*</span></label>
+                <select #Unit="ngModel" ngModel name="Unit" class="form-control" id="Unit" required>
+                  <option value="">--select--</option>
+                  <option *ngFor="let item of items" [value]="item.name">
+                    {{ item.name }}
+                  </option>
+                </select>
+                <div class="alert alert-danger" *ngIf="Unit.touched && Unit.invalid">
+                  Please select item
+                </div>
+              </div>
+              <div class="form-group mb-1">
+                <label for="Default" class="form-label">Default price List</label>
+                <select ngModel name="" class="form-control" id="" >
+                  <option value="">--select--</option>
+                  <option *ngFor="let item of items" [value]="item.name">
+                    {{ item.name }}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group mb-1">
+                <label for="decimal" class="form-label">Decimal Supported</label>
+                <input ngModel name="" type="number" class="form-control" id="decimal"/>
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">Mini stock level</label>
+                <input  ngModel name="" type="number" class="form-control" id="Mini"  />
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">Max stock Level</label>
+                <input ngModel name="max" type="number" class="form-control" id="max"  />
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">Re-Order level</label>
+                <input  ngModel name="" type="number" class="form-control" id="re"  />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group mb-1">
+                <label for="category" class="form-label">Product Type</label>
+                <select  ngModel name="" class="form-control" id="">
+                  <option value=""></option>
+                  <option *ngFor="let item of items" [value]="item.name">
+                    {{ item.name }}
+                  </option>
+                </select>
+
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">SKU</label>
+                <input  ngModel name="sku" type="text" class="form-control"  />
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">HSN</label>
+                <input  ngModel name="hsn" type="text" class="form-control"  />
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">SAC</label>
+                <input  ngModel name="sac" type="text" class="form-control"  />
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                  Is Active
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group mb-1">
+                <label for="Unit" class="form-label">Intra State Tax (Same State)</label>
+                <select ngModel name="" class="form-control">
+                  <option value="">--select--</option>
+                  <option *ngFor="let item of items" [value]="item.name">
+                    {{ item.name }}
+                  </option>
+                </select>
+
+              </div>
+              <div class="form-group mb-1">
+                <label for="Default" class="form-label">Intra State Tax (Other State)</label>
+                <select  ngModel name="" class="form-control" id="" >
+                  <option value="">--select--</option>
+                  <option *ngFor="let item of items" [value]="item.name">
+                    {{ item.name }}
+                  </option>
+                </select>
+
+              </div>
+              <div class="form-group mb-1">
+                <label for="decimal" class="form-label">MRP</label>
+                <input ngModel name="mrp" type="number" class="form-control" id="mrp" />
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">purchase Price</label>
+                <input ngModel name="" type="number" class="form-control" id=""  />
+              </div>
+              <div class="form-group mb-1">
+                <label for="title" class="form-label">Selling Price</label>
+                <input  ngModel name="" type="number" class="form-control" id=""  />
+              </div>
+            </div>
+          </div>
+          <div class="last">
+            <button type="submit" class="btn btn-primary mx-3"><i class="fa fa-envelope px-2"></i>Save</button>
+            <button type="button" class="btn btn-light btn-outline-dark" data-bs-dismiss="modal"><i class="bi bi-x-circle px-2"></i>close</button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div> -->
+<!-- **************************** -->
+<!-- **************************** -->
+<!-- **************************** -->
+<!---->
+<div class="dropdown container-fluid">
+<div  class="btn row  bar1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+    <div class="col"><i class="bi bi-arrow-down-short"></i>Applicance</div>
+    <!-- <div class="col"></div>
+    <div class="col"></div>
+    <div class="col">false</div>
+    <div class="col"></div>
+    <div class="col"><i class="bi bi-pencil-square  px-2" data-bs-toggle="modal" data-bs-target="#myModal"></i><i class="bi bi-trash-fill"(click)="show=true" ></i>
+</div> -->
+</div>
+    <div class="dropdown-menu"  >
+  <table class="table " id="dropdownMenu">
+    <thead>
+      <tr class="row">
+        <th class="col">S.No</th>
+        <th  class="col">product</th>
+        <th class="col ">MRP</th>
+        <th class="col">PRICE</th>
+        <th class="col ">---</th>
+      </tr>
+    </thead>
+    <tbody  >
+      <tr class="row ">
+        <td class="col bar" >
+          <li  *ngFor="let item of items"> {{item.id}}</li>
+        </td>
+        <td class="col bar">
+          <li  *ngFor="let item of items"> {{item.name}}</li>
+        </td>
+        <td class="col bar">
+          <li >
+          <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="val">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bar">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="nav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bal">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="hav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="lal">
+        </li>
+        </td>
+        <td class="col bar">
+          <li >
+          <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="e">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="d">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="c">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="b">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="a">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="l">
+        </li>
+        </td>
+        <td class="col bar">
+          <li >
+          <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="f">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="g">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="h">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="i">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="j">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="k">
+        </li>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<ngb-toast  class="toast" *ngIf="show"  [autohide]="true" (hidden)="close()">
+  If you close me, I will automatically re-appear after a few seconds.
+</ngb-toast>
+
+`````````````````````````````````
+<div class="dropdown">
+
+    <button class="btn  bar1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+      <i class="bi bi-arrow-down-short"></i>
+  </button>
+  <ul class="dropdown-menu   container-fluid">
+  <table class="table " id="dropdownMenu">
+    <thead>
+      <tr class="row">
+        <th class="col bar">S.No</th>
+        <th  class="col bar">product</th>
+        <th class="col bar">MRP</th>
+        <th class="col bar">PRICE</th>
+        <th class="col bar">---</th>
+        <th class="col bar"><i class="bi bi-pencil-square  " data-bs-toggle="modal" data-bs-target="#myModal"></i><i class="bi bi-trash-fill" (click)="show= true"></i></th>
+      </tr>
+    </thead>
+    <tbody  >
+
+      <tr class="row ">
+        <td class="col bar"  >
+          <li  *ngFor="let item of items"> {{item.id}}</li>
+        </td>
+        <td class="col bar">
+          <li   *ngFor="let item of items"> {{item.name}}</li>
+        </td>
+        <td class="col bar">
+          <li >
+          <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="val">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bar">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="nav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bal">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="hav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="lal">
+        </li>
+        </td>
+        <td class="col bar">
+          <li >
+          <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="val">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bar">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="nav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bal">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="hav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="lal">
+        </li>
+        </td>
+        <td class="col bar">
+          <li >
+          <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="val">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bar">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="nav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bal">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="hav">
+        </li>
+        <li >
+          <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="lal">
+        </li>
+        </td>
+        <td class="col bar"><i class="bi bi-pencil-square  " data-bs-toggle="modal" data-bs-target="#myModal"></i><i class="bi bi-trash-fill" (click)="show= true"></i>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</ul>
+</div> -->
+<!-- **************************** -->
+
+
+<!-- *************************************************
+
+<mat-grid-list  >
+  <mat-grid-tile
+      *ngFor="let tile of items">
+
+    {{tile.name}}
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<input type="month">
+ -->
+
+<!-- <mat-list dense>
+  <mat-list-item> Pepper </mat-list-item>
+  <mat-list-item> Salt </mat-list-item>
+  <mat-list-item> Paprika </mat-list-item>
+ </mat-list> -->
+
+ <button (click) = "hai ='expression'" > Applicance</button>
+<button (click) = "hai ='my'" > hai</button>
+ <div [ngSwitch] = " hai">
+  <div *ngSwitchCase="'expression'">
+    <div class="" >
+      <table class="table " id="">
+        <thead>
+          <tr class="row">
+            <th class="col">S.No</th>
+            <th  class="col">product</th>
+            <th class="col ">MRP</th>
+            <th class="col">PRICE</th>
+            <th class="col ">---</th>
+          </tr>
+        </thead>
+        <tbody  >
+          <tr class="row ">
+            <td class="col bar" >
+              <li  *ngFor="let item of items"> {{item.id}}</li>
+            </td>
+            <td class="col bar">
+              <li  *ngFor="let item of items"> {{item.name}}</li>
+            </td>
+            <td class="col bar">
+              <li >
+              <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="val">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bar">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="nav">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bal">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="hav">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="lal">
+            </li>
+            </td>
+            <td class="col bar">
+              <li >
+              <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="e">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="d">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="c">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="b">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="a">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="l">
+            </li>
+            </td>
+            <td class="col bar">
+              <li >
+              <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="f">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="g">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="h">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="i">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="j">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="k">
+            </li>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+        </div>
+  </div>
+  <div *ngSwitchCase="'my'">
+    <div class="" >
+      <table class="table " id="">
+        <thead>
+          <tr class="row">
+            <th class="col">S.No</th>
+            <th  class="col">product</th>
+            <th class="col ">MRP</th>
+            <th class="col">PRICE</th>
+            <th class="col ">---</th>
+          </tr>
+        </thead>
+        <tbody  >
+          <tr class="row ">
+            <td class="col bar" >
+              <li  *ngFor="let item of items"> {{item.id}}</li>
+            </td>
+            <td class="col bar">
+              <li  *ngFor="let item of items"> {{item.name}}</li>
+            </td>
+            <td class="col bar">
+              <li >
+              <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="val">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bar">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="nav">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="bal">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="hav">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="lal">
+            </li>
+            </td>
+            <td class="col bar">
+              <li >
+              <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="e">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="d">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="c">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="b">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="a">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="l">
+            </li>
+            </td>
+            <td class="col bar">
+              <li >
+              <input type="number" class="form-control"  class="form-control-plaintext"  id="" [(ngModel)]="f">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="g">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="h">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="i">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="j">
+            </li>
+            <li >
+              <input type="number" class="form-control"  class="form-control-plaintext" id="" [(ngModel)]="k">
+            </li>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+        </div>
+  </div>
+  <div *ngSwitchDefault>output2</div>
+</div>
+
+
+
+ -------------------=========
+ <!-- <mat-list>
+  <mat-list-item *ngFor="let message of items">
+    <h3 matLine> {{message.id}} </h3>
+    <p matLine>
+      <span> {{message.name}} </span>
+      <span class="demo-2">--{{message.name}} </span>
+    </p>
+  </mat-list-item>
+</mat-list> -->
+
+<!-- <app-my-tree></app-my-tree> -->
+
+
+
+<!-- <table>
+  <tbody>
+    <tr>
+      <th>
+        <li *ngFor=" let list of items ;" class="my-3"> -->
+          <!-- {{i}}- {{ list.name}} <span *ngIf="isFirst"><input type="text"/>;nbsp<button (click)="onAdd()" >Add</button></span> -->
+          <!-- <span>
+            <input type="text" placeholder="hai" class="mx-2" />
+            <input type="text" placeholder="my" class="mx-2" />
+            <input type="text" placeholder="name" class="mx-2" />
+            <input type="text" placeholder="last" class="mx-2" />
+            <button class="mx-2" (click)="onAdd()">Add</button>
+          </span>
+          <button class="" (click)="onRemove()"> remove</button>
+        </li>
+      </th>
+    </tr>
+  </tbody>
+</table>  {{ list.id}}
+         -->
+
+
+<h6>Post Api http method</h6>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+  <!-- <input type="text" name="" ngModel><br> -->
+  <input type="text" name="userId" ngModel placeholder="userId"><br>
+  <input type="text" name="id" ngModel placeholder="id"><br>
+  <input type="text" name="title" ngModel placeholder="title"><br>
+  <!-- <input type="text" name="name" ngModel placeholder="name"><br> -->
+  <input type="text" name="body" ngModel placeholder="body"><br>
+  <button type="submit">Submit button </button>
+
+
+</form>
+
+<input (keyup.enter)="createpost(title)"  #title type="text " class="crom-control">
+
+<ul *ngFor ="let post of posts"
+class="list-group-item"
+>{{post?.title}}
+
+<button class="btn btn-default btn-sm" (click)="updatepost(post)">update</button>
+
+  </ul>
+
+
+
+  

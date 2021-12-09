@@ -1,0 +1,52 @@
+app-last{
+  .last{
+    background-color: black;
+    color: white;
+    padding:15px 79px;
+    margin-top: 15px;
+  }
+  .form-control{
+    height: 32px;
+    background-color:#CBCBCB ;
+  }
+  .para{
+    font-size: 11px;
+  }
+  .list {
+
+    ul{
+      list-style: none;
+      display: inline-flex;
+
+      li{
+        border-right: 2px solid #cbcbcb ;
+        padding: 0px 10px;
+        a{
+          color:#cbcbcb;
+
+        }
+
+      }
+    }
+  }
+
+  .las{
+    ul{
+      list-style: none;
+      display: inline-flex;
+
+      li{
+        padding: 0px 5px;
+        a{
+          color:#a38a8a;
+          border-bottom: none;
+
+        }
+        li:hover{
+          border-bottom: 1px solid #a38a8a ;
+        }
+
+      }
+    }
+  }
+}

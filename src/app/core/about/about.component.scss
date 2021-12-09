@@ -1,0 +1,180 @@
+app-about{
+    .text{
+        width: 100%;
+        margin: auto;
+    }
+    h1{
+        margin-top: 15px;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Great Vibes', 'cursive';
+    }
+    .para{
+        width: 900px;
+        margin: auto;
+        margin-top: 15px;
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Dancing Script', 'cursive';
+
+    }
+    .last{
+        margin: 15px;
+        text-align: center;
+        font-size: 50px;
+
+    }
+    .bottom{
+        display: flex;
+        flex-direction: row;
+    }
+    .bi-caret-right-fill{
+        font-size: 20px;
+        vertical-align: baseline;
+        background-color: #F07677;
+        padding: 15px 15px;
+        border-radius: 100%;
+        color: white;
+        position: relative;
+    }
+    .ripple:after,.ripple1{
+        content: "";
+        position: absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom: 0;
+        border-radius: 100%;
+        border:2px solid #e2e2e2;
+        animation-name: ripple;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+    .ripple1{
+        animation-delay: 2s;
+        left:-10px;
+        top:-10px;
+        right:-10px;
+        bottom: -10px;
+        opacity: 0;
+    }
+    @keyframes ripple {
+        from {
+            transform: scale(1);
+            opacity: 1;
+        }
+        to {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+      }
+    .about{
+        width: 850px;
+        margin: auto;
+        padding: 15px 15px;
+    }
+    .first{
+        float: left;
+        position: relative;
+    }
+    .second{
+        position: relative;
+        float: right;
+    }
+    .pic1{
+        padding: 0 10px;
+        height: 300px;
+    }
+    .pic1:hover + .photo1{
+        display: block;
+    }
+    .pic2{
+        padding: 0 10px;
+        height: 300px;
+    }
+
+    .clearfix{
+        clear: both;
+    }
+
+    .clock{
+        display: flex;
+        flex-direction: row;
+        width: 800px;
+        margin: auto;
+        padding-top: 30px;
+        text-align: center
+    }
+    .tm{
+        margin: auto;
+    }
+    .photo1{
+        display: none;
+     text-align: center;
+     border-radius: 1px solid white;
+     position: absolute;
+     left:0;
+     top:0;
+     right:0;
+     bottom: 0;
+     background: rgba(0,0,0,.4);
+     color:#fff;
+    }
+    .photo1:after{
+        position: absolute;
+        content: "";
+        left:20px;
+        top:10px;
+        right:20px;
+        bottom: 10px;
+        border:2px solid #fff;
+    }
+    h1,.photo2 h1 {
+        margin-top: 100px;
+        font-size: 50px;
+        font-family: 'Great Vibes', 'cursive';
+
+    }
+    .photo1 p{
+        margin: 0 40px;
+        text-align: center;
+
+    }
+    .pic2:hover +.photo2{
+        display: block;
+    }
+    .photo2{
+        display: none;
+     text-align: center;
+     border-radius: 1px solid white;
+     position: absolute;
+     left:0;
+     top:0;
+     right:0;
+     bottom: 0;
+     background: rgba(0,0,0,.4);
+     color:#fff;
+    }
+    .photo2:after{
+        position: absolute;
+        content: "";
+        left:20px;
+        top:10px;
+        right:20px;
+        bottom: 10px;
+        border:2px solid #fff;
+    }
+
+    .photo2 p{
+        margin: 0 40px;
+        text-align: center;
+
+    }
+    .italic{
+        font-size: 50px;
+        transform: rotate(6deg);
+    }
+    .small{
+        font-size: 20px;
+    }
+}

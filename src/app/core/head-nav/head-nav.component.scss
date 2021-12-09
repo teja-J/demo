@@ -1,0 +1,62 @@
+app-head-nav{
+    .header{
+        height: 50px;
+        position: sticky;
+        background-color: gray;
+        top: 0;
+        z-index: 100;
+    }
+    .img1{
+        height: 500px;
+
+
+
+    }
+    .center{
+        width: unset;
+        margin-right: 200px;
+        float: right;
+    }
+    .banner-content{
+        position: absolute;
+        z-index: 10;
+        top:50px;
+    }
+    ul{
+        float: left;
+        margin-top: 16px;
+
+    }
+    li{
+        list-style: none;
+        padding: 0 15px;
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+        float: left;
+    }
+    li:hover{
+        color: #F07677;
+    }
+    .banner{
+        position: relative;
+        top:0;
+        left:0;
+        width: 100%;
+    }
+    .image{
+        margin-top: 150px;
+        margin-left: 200px;
+    }
+    p{
+        margin: 0;
+        margin-left: 150px;
+        color: white;
+        font-size: 20px;
+    }
+    .main{
+        margin-left: 50px;
+        font-size: 50px;
+        font-family: 'Great Vibes', 'cursive';
+     }
+}
