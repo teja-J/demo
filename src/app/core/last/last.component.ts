@@ -8,7 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class LastComponent implements OnInit {
   public arr:string='Teja';
-  constructor() { }
+constructor() { }
 
   ngOnInit(): void {
   }
